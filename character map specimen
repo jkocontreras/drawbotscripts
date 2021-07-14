@@ -1,0 +1,14 @@
+# Specimen of character map
+
+pageSize ="A4"
+border = 60
+
+fontsInstalled = installedFonts()
+fontList = [x for x in fontsInstalled if "Times" in x] #search fonts
+print(fontList)
+for fontName in fontList:
+    newPage(pageSize)
+    txt = FormattedString(font=fontName, fontSize=46)
+    txt.appendGlyph(*txt.listFontGlyphNames())
+    txt=textBox (txt, (border, border, width()-border*2, height()-border*2))
+    
